@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <h2 class="text-center mb-4">ALL ITEMS</h2>
+    <div class="row">
+      <div *ngFor="let fruit of fruits" class="col-md-4 mb-4">
+        <div class="card text-white" [style.background-color]="fruit.color">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ fruit.name }}</h5>
+            <p class="card-text">Count: {{ fruit.count }}</p>
+            <button class="btn btn-light me-2" (click)="addToBasket(fruit)">+</button>
+            <button class="btn btn-light" (click)="removeFromBasket(fruit)">-</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <h2 class="text-center mt-5 mb-4">BASKET STACK</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="basket-stack" [style.height]="getStackHeight()">
+          <div *ngFor="let item of basketStack; let i = index" 
+               class="stack-item" 
+               [style.background-color]="item.color"
+               [style.bottom]="i * 30 + 'px'">
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="error" class="alert alert-danger mt-3" role="alert">
+      {{ error }}
+    </div>
+  </div>

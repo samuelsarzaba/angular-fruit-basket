@@ -1,0 +1,18 @@
+.card {
+    height: 200px;
+  }
+  
+  .basket-stack {
+    position: relative;
+    width: 100%;
+    border: 2px solid #333;
+    transition: height 0.3s ease;
+  }
+  
+  .stack-item {
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 20px;
+    border: 1px solid #fff;
+  }
